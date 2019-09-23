@@ -6,7 +6,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'capstone') {
 					sh '''
-						eksctl update cluster \
+						eksctl create cluster \
 						--name capstonecluster \
 						--version 1.13 \
 						--nodegroup-name standard-workers \
