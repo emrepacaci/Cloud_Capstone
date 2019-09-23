@@ -4,7 +4,7 @@ pipeline {
 
 		stage('Create kubernetes cluster') {
 			steps {
-				withAWS(region:'us-west-2', credentials:'aws') {
+				withAWS(region:'us-west-2', credentials:'capstone') {
 					sh '''
 						eksctl create cluster \
 						--name capstonecluster \
