@@ -12,7 +12,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						docker build -t emrepacaci/cloudcapstonev1 .
+						docker build -t emrepacaci/cloudcapstonev1 -f deploy-containers/Dockerfile .
 					'''
 				}
 			}
